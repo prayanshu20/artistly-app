@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Aisha Khan",
+    "category": "Singer",
+    "priceRange": "$500-$1000",
+    "location": "Mumbai"
+  },
+  {
+    "id": 2,
+    "name": "Raj Verma",
+    "category": "Dancer",
+    "priceRange": "$300-$700",
+    "location": "Delhi"
+  }
+]
