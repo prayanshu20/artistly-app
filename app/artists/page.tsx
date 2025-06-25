@@ -1,8 +1,8 @@
 export default function ArtistsPage() {
   return (
-    <div>
-      <h1>Artists Listing</h1>
-      {/* Your grid + filter logic here */}
+    <div className="p-4">
+      <h1 className="text-2xl font-bold">Artists Listing</h1>
+      <p>Coming soon...</p>
     </div>
   );
 }
