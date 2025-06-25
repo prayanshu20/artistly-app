@@ -1,23 +1,31 @@
 "use client"
-import Header from "@/components/Header"
-import { useForm } from "react-hook-form"
-import * as yup from "yup"
-import { yupResolver } from "@hookform/resolvers/yup"
+import Header from "@/components/Header";
+import { useForm, SubmitHandler } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 const schema = yup.object({
   name: yup.string().required(),
   bio: yup.string().required(),
   category: yup.array().min(1).required(),
   location: yup.string().required()
-})
+});
+
+type FormData = {
+  name: string;
+  bio: string;
+  category: string[];
+  location: string;
+};
 
 export default function OnboardPage() {
-  const { register, handleSubmit, formState: { errors } } = useForm({ resolver: yupResolver(schema) })
+  const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
+    resolver: yupResolver(schema)
+  });
 
-  const handleSomething = (data: FormData) => { ... }
- {
-    console.log("Form submitted", data)
-  }
+  const onSubmit: SubmitHandler<FormData> = (data) => {
+    console.log("Form submitted", data);
+  };
 
   return (
     <div>
@@ -44,5 +52,5 @@ export default function OnboardPage() {
         </form>
       </main>
     </div>
-  )
+  );
 }
