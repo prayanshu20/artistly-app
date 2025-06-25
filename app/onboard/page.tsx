@@ -14,7 +14,7 @@ const schema = yup.object({
 export default function OnboardPage() {
   const { register, handleSubmit, formState: { errors } } = useForm({ resolver: yupResolver(schema) })
 
-  const handleSomething = (data: FormDataType) => { ... }
+  const handleSomething = (data: FormData) => { ... }
  {
     console.log("Form submitted", data)
   }
